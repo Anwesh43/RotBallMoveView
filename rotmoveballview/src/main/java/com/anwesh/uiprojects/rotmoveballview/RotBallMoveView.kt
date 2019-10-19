@@ -13,13 +13,13 @@ import android.graphics.Color
 import android.graphics.Canvas
 
 val nodes : Int = 5
-val scGap : Float = 0.01f
+val scGap : Float = 0.02f
 val delay : Long = 30
 val strokeFactor : Int = 90
 val sizeFactor : Float = 2.9f
 val foreColor : Int = Color.parseColor("#673AB7")
 val backColor : Int = Color.parseColor("#BDBDBD")
-val backDeg : Float = 90f
+val backDeg : Float = -90f
 val rFactor : Float = 3f
 
 fun Int.inverse() : Float = 1f / this
@@ -34,7 +34,7 @@ fun Canvas.drawRotBallMove(size : Float, w : Float, sc : Float, paint : Paint) {
     val sf : Float = sc1.sinify()
     save()
     rotate(backDeg * sf)
-    drawLine(0f, -size, 0f, size, paint)
+    drawLine(0f, -size, 0f, 0f, paint)
     restore()
     drawCircle(r + w * sc2, -size, r, paint)
 }
