@@ -206,4 +206,13 @@ class RotBallMoveView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun  create(activity : Activity) : RotBallMoveView {
+            val view : RotBallMoveView = RotBallMoveView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
