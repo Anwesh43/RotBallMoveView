@@ -183,4 +183,26 @@ class RotBallMoveView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : RotBallMoveView) {
+
+        private val animator : Animator = Animator(view)
+        private val rbm : RotBallMove = RotBallMove(0)
+
+        fun render(canvas : Canvas, paint : Paint) {
+            canvas.drawColor(backColor)
+            rbm.draw(canvas, paint)
+            animator.animate {
+                rbm.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            rbm.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
