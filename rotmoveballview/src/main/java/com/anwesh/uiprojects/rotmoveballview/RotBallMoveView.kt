@@ -52,3 +52,21 @@ fun Canvas.drawRBMNode(i : Int, scale : Float, paint : Paint) {
     drawRotBallMove(size, w, scale, paint)
     restore()
 }
+
+class RotBallMoveView(ctx : Context) : View(ctx) {
+
+    private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
